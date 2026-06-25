@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --color-brand-green: #006837;
+  --color-brand-green-dark: #00502a;
+  --color-brand-green-light: #e6f3eb;
+  --color-brand-orange: #F7941D;
+  --color-brand-orange-dark: #d67a12;
+  --color-brand-orange-light: #fef4e8;
+  --color-brand-cream: #FFFFFF;
+  --color-brand-cream-dark: #F9F9F9;
+  --color-brand-gold: #D4AF37;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-green);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green-dark);
+}
+
+/* Cinematic Ken Burns Effect */
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 25s ease-in-out infinite;
+}
+
+/* Shimmer Light Reflection */
+@keyframes gold-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-gold {
+  background: linear-gradient(90deg, rgba(247,148,29,0.1) 25%, rgba(212,175,55,0.4) 50%, rgba(247,148,29,0.1) 75%);
+  background-size: 200% 100%;
+  animation: gold-shimmer 3s infinite;
+}
+
+/* Smooth Infinite Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Luxury Studio Vignette Overlay */
+.image-vignette {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.group:hover .image-vignette::after {
+  box-shadow: inset 0 0 36px rgba(0, 0, 0, 0.65);
+}
+

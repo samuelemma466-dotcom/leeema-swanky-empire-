@@ -1,0 +1,6 @@
+{
+  "name": "Leemah Swanky Empire",
+  "description": "Authentically You, Modestly Swanky - Elegant and high-end modest fashion storefront.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
