@@ -409,12 +409,12 @@ export const Products: React.FC = () => {
                 <X className="h-5 w-5" />
               </button>
 
-              {/* Image Side (5 cols) */}
-              <div className="md:col-span-5 relative rounded-2xl overflow-hidden bg-gray-50 aspect-4/5 md:h-full image-vignette">
+              {/* Image Side (4 cols) */}
+              <div className="md:col-span-4 relative rounded-2xl overflow-hidden bg-gray-50 aspect-[4/5] max-h-[320px] md:max-h-[380px] mx-auto w-full shadow-inner image-vignette">
                 <img
                   src={quickViewProduct.image}
                   alt={quickViewProduct.name}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 {quickViewProduct.isThrift && (
@@ -424,8 +424,8 @@ export const Products: React.FC = () => {
                 )}
               </div>
 
-              {/* Details Side (7 cols) */}
-              <div className="md:col-span-7 flex flex-col justify-between h-full">
+              {/* Details Side (8 cols) */}
+              <div className="md:col-span-8 flex flex-col justify-between h-full">
                 <div>
                   {/* Category Label */}
                   <span className="text-[10px] font-bold text-brand-orange uppercase tracking-widest font-sans block mb-1">
